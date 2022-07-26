@@ -1,0 +1,21 @@
+Status codes:
+   - invalid username
+   - invalid password
+   - returned HTTP status codes differences
+   
+Error messages
+   - user name or password wrong
+   - user name or password wrong.
+  - options gre - extract add one--> find the response. there will be a difference in one warning
+  
+Response times:
+   - different response times with the correct username + very long password
+
+ X-Forwarded-For : 505
+ 
+ Flawed brute-force.
+ 
+ If have the correct user / pass for login and the server block the ip add into every second try the correct user / pass. 
+ If the count reseting and be able to login after 2 unsuccess it reset the counter of blocker. 
+ 
+ 
