@@ -19,3 +19,22 @@ Response times:
  If the count reseting and be able to login after 2 unsuccess it reset the counter of blocker. 
  
  
+JSON format username / password
+{"username":"123","password":"456","":""}
+
+Add the username and the passwords , and try repeater. If success copy the url from the response to browser, and its ok. 
+
+{"username":"carlos","password":
+
+["123456",
+"password",
+"mobilemail",
+"mom",
+"monitor",
+"monitoring",
+"montana",
+"moon",
+"moscow"
+]
+
+}
