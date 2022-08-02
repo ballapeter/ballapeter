@@ -1,0 +1,7 @@
+1. Simply the page dont check the second step. Has the URL and change it before add the secont verification code I'm In. 
+
+2. Security code get vie mail. But in the post there is the username Verifiy="username" taken into cookie, its possible to modify this cookie. 
+Try to login with wrong security code, and brute force the security code with verify username change.
+
+3. Brute force attack when user logged out after a wrong try. Add macro for the steps until the page ask for validation key. Brute force / sniper attack
+with the login details
