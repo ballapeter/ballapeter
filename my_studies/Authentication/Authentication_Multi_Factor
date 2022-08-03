@@ -5,3 +5,8 @@ Try to login with wrong security code, and brute force the security code with ve
 
 3. Brute force attack when user logged out after a wrong try. Add macro for the steps until the page ask for validation key. Brute force / sniper attack
 with the login details
+
+
+
+
+
