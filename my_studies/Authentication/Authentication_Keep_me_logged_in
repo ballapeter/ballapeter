@@ -1,0 +1,11 @@
+When I know the login details, or be able to register, and have keep me logged in check if the login response has cookie. 
+If stored cookie contain user data it can be hacked. 
+
+Examine this cookie in the Inspector panel and notice that it is Base64-encoded. Its decoded value is wiener:51dc30ddc473d43a6011e9ebba6ca770. Study the length and character set of this string and notice that it could be an MD5 hash. Given that the plaintext is your username, you can make an educated guess that this may be a hash of your password. Hash your password using MD5 to confirm that this is the case. We now know that the cookie is constructed as follows:
+base64(username+':'+md5HashOfPassword)
+
+Under Payload processing, add the following rules in order. These rules will be applied sequentially to each payload before the request is submitted.
+
+    Hash: MD5
+    Add prefix: wiener:
+    Encode: Base64-encode
